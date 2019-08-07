@@ -1,6 +1,6 @@
 #! /usr/local/bin/python3
 
-import requests, sys, json
+import requests, sys, json, os
 
 def trackExists(url):
 	try:
@@ -9,7 +9,9 @@ def trackExists(url):
 	except requests.exceptions.RequestException:
 		return False
 
-apiurl = ""
+if not os.environ.get("MEDIA_API"):
+	sys.exit("\033[91mMEDIA_API not set\033[0m")
+apiurl = os.environ.get("MEDIA_API")
 pagecount = 520
 pagecount = 142
 print("\033[0mStarting")
