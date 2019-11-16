@@ -30,8 +30,6 @@ while True:
 		url = track['url']
 		url = url.replace("http://", "https://")
 		url = url.replace("medlib/ceol srl", "medlib/import/black/ceol srl")
-		url = url.replace("import/black/ceol srl/artists/Watercress", "import/rowan/Moosic/Watercress")
-		url = url.replace("Watercress/Bummer", "Watercress/Bummer (2001)")
 		url = url.replace("Media to sort/Chumbawamba - ABCDEFG (2010) - Alternative [www.torrentazos.com]", "artists/Chumbawamba/ABCDEFG%20(2010)")
 		url = url.replace("Media to sort/Chumbawamba - ","artists/Chumbawamba/")
 		url = url.replace("Media to sort/Yes . Discography", "artists/Yes")
