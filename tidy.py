@@ -109,7 +109,10 @@ while True:
 				"fingerprint": track["fingerprint"],
 			}
 			result = requests.put(apiurl+"/tracks/"+str(track['trackid']), data=json.dumps(trackdata), allow_redirects=False, headers={"If-None-Match": "*"})
-			if not result.ok:
+			if result.status_code == 500 and result.text == "UNIQUE constraint failed: track.url\n":
+				print("\033[91mDuplicate track "+str(track['trackid'])+", url: "+url+" - Skipping\033[0m")
+				continue
+			if result.status_code != 200:
 				sys.exit("\033[91m** Error ** HTTP Status code "+str(result.status_code)+" returned by API "+apiurl+"/tracks/"+str(track['trackid'])+" : " +  result.text + "\033[0m")
 			print("Updated track "+str(track["trackid"])+" to "+url)
 			continue
