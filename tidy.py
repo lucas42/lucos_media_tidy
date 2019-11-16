@@ -12,8 +12,7 @@ def trackExists(url):
 if not os.environ.get("MEDIA_API"):
 	sys.exit("\033[91mMEDIA_API not set\033[0m")
 apiurl = os.environ.get("MEDIA_API")
-pagecount = 520
-pagecount = 142
+pagecount = 0
 print("\033[0mStarting")
 while True:
 	dataresponse = requests.get(apiurl+"/tracks?page="+str(pagecount))
