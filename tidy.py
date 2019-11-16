@@ -97,7 +97,21 @@ while True:
 
 		tracksToDelete = [
 			1239,  # Old flac file I don't care about
-			14079, # Duplicate file
+			# Duplicate files:
+			14079,
+			3727,
+			17169,
+			17170,
+			17171,
+			17172,
+			17175,
+			17178,
+			17179,
+			17180,
+			17182,
+			17184,
+			17189,
+			17192,
 		]
 		if track['trackid'] in tracksToDelete:
 			continue
